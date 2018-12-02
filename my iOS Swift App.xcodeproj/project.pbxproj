@@ -7,15 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31EF65702788FBF2456B2D7D /* libPods-my iOS Swift App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F1B90091FD29ED9108EC03E /* libPods-my iOS Swift App.a */; };
 		87D2CEB921B10DAC00E5004F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEB821B10DAC00E5004F /* AppDelegate.swift */; };
 		87D2CEBB21B10DAC00E5004F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEBA21B10DAC00E5004F /* FirstViewController.swift */; };
 		87D2CEBD21B10DAC00E5004F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEBC21B10DAC00E5004F /* SecondViewController.swift */; };
 		87D2CEC021B10DAC00E5004F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87D2CEBE21B10DAC00E5004F /* Main.storyboard */; };
 		87D2CEC221B10DAE00E5004F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87D2CEC121B10DAE00E5004F /* Assets.xcassets */; };
 		87D2CEC521B10DAE00E5004F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87D2CEC321B10DAE00E5004F /* LaunchScreen.storyboard */; };
+		87D2CED121B10FAA00E5004F /* ApplicationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CECC21B10FAA00E5004F /* ApplicationConstants.swift */; };
+		87D2CED221B10FAA00E5004F /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CECD21B10FAA00E5004F /* Authentication.swift */; };
+		87D2CED321B10FAA00E5004F /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CECF21B10FAA00E5004F /* SendViewController.swift */; };
+		87D2CED421B10FAA00E5004F /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CED021B10FAA00E5004F /* ConnectViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21F8BDCFC02CAE24CD2A3FC8 /* Pods-my iOS Swift App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my iOS Swift App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-my iOS Swift App/Pods-my iOS Swift App.debug.xcconfig"; sourceTree = "<group>"; };
+		6F1B90091FD29ED9108EC03E /* libPods-my iOS Swift App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-my iOS Swift App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87D2CEB521B10DAC00E5004F /* my iOS Swift App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "my iOS Swift App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87D2CEB821B10DAC00E5004F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87D2CEBA21B10DAC00E5004F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +31,12 @@
 		87D2CEC121B10DAE00E5004F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87D2CEC421B10DAE00E5004F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87D2CEC621B10DAE00E5004F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87D2CECC21B10FAA00E5004F /* ApplicationConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationConstants.swift; sourceTree = "<group>"; };
+		87D2CECD21B10FAA00E5004F /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		87D2CECE21B10FAA00E5004F /* Graph-iOS-Swift-Connect-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Graph-iOS-Swift-Connect-Bridging-Header.h"; sourceTree = "<group>"; };
+		87D2CECF21B10FAA00E5004F /* SendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
+		87D2CED021B10FAA00E5004F /* ConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
+		C5C1B76DFA43AED1CCC62CE0 /* Pods-my iOS Swift App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my iOS Swift App.release.xcconfig"; path = "Pods/Target Support Files/Pods-my iOS Swift App/Pods-my iOS Swift App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +44,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31EF65702788FBF2456B2D7D /* libPods-my iOS Swift App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03BC215519E1CC2AE2DD11F3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				21F8BDCFC02CAE24CD2A3FC8 /* Pods-my iOS Swift App.debug.xcconfig */,
+				C5C1B76DFA43AED1CCC62CE0 /* Pods-my iOS Swift App.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		87D2CEAC21B10DAC00E5004F = {
 			isa = PBXGroup;
 			children = (
 				87D2CEB721B10DAC00E5004F /* my iOS Swift App */,
 				87D2CEB621B10DAC00E5004F /* Products */,
+				03BC215519E1CC2AE2DD11F3 /* Pods */,
+				E0FC6AE5732007174FEBACEB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +81,11 @@
 		87D2CEB721B10DAC00E5004F /* my iOS Swift App */ = {
 			isa = PBXGroup;
 			children = (
+				87D2CECC21B10FAA00E5004F /* ApplicationConstants.swift */,
+				87D2CECD21B10FAA00E5004F /* Authentication.swift */,
+				87D2CED021B10FAA00E5004F /* ConnectViewController.swift */,
+				87D2CECE21B10FAA00E5004F /* Graph-iOS-Swift-Connect-Bridging-Header.h */,
+				87D2CECF21B10FAA00E5004F /* SendViewController.swift */,
 				87D2CEB821B10DAC00E5004F /* AppDelegate.swift */,
 				87D2CEBA21B10DAC00E5004F /* FirstViewController.swift */,
 				87D2CEBC21B10DAC00E5004F /* SecondViewController.swift */,
@@ -67,6 +97,14 @@
 			path = "my iOS Swift App";
 			sourceTree = "<group>";
 		};
+		E0FC6AE5732007174FEBACEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F1B90091FD29ED9108EC03E /* libPods-my iOS Swift App.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +112,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87D2CEC921B10DAE00E5004F /* Build configuration list for PBXNativeTarget "my iOS Swift App" */;
 			buildPhases = (
+				C0AA7A63D60750B88AA80038 /* [CP] Check Pods Manifest.lock */,
 				87D2CEB121B10DAC00E5004F /* Sources */,
 				87D2CEB221B10DAC00E5004F /* Frameworks */,
 				87D2CEB321B10DAC00E5004F /* Resources */,
@@ -133,13 +172,42 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C0AA7A63D60750B88AA80038 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-my iOS Swift App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		87D2CEB121B10DAC00E5004F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87D2CED421B10FAA00E5004F /* ConnectViewController.swift in Sources */,
 				87D2CEBD21B10DAC00E5004F /* SecondViewController.swift in Sources */,
 				87D2CEB921B10DAC00E5004F /* AppDelegate.swift in Sources */,
+				87D2CED321B10FAA00E5004F /* SendViewController.swift in Sources */,
+				87D2CED121B10FAA00E5004F /* ApplicationConstants.swift in Sources */,
+				87D2CED221B10FAA00E5004F /* Authentication.swift in Sources */,
 				87D2CEBB21B10DAC00E5004F /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +352,7 @@
 		};
 		87D2CECA21B10DAE00E5004F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21F8BDCFC02CAE24CD2A3FC8 /* Pods-my iOS Swift App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -295,6 +364,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hellotham.my-iOS-Swift-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "my iOS Swift App/Graph-iOS-Swift-Connect-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,6 +372,7 @@
 		};
 		87D2CECB21B10DAE00E5004F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5C1B76DFA43AED1CCC62CE0 /* Pods-my iOS Swift App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -313,6 +384,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hellotham.my-iOS-Swift-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "my iOS Swift App/Graph-iOS-Swift-Connect-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
