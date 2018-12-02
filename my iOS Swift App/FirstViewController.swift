@@ -17,6 +17,7 @@ class FirstViewController: UIViewController {
     }()
     
     @IBOutlet weak var connectButton: UIBarButtonItem!
+    @IBOutlet weak var userNameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,14 +40,30 @@ class FirstViewController: UIViewController {
                 }
             }
             else {
-                self.getProfile()
+                self.getUserInfo() { (user) in
+                    print("USER_INFO_LOADED")
+                    self.userNameLabel.text = user.displayName
+                }
             }
         }
-
+        
+        MSGraphClient.setAuthenticationProvider(authentication.authenticationProvider)
     }
     
-    private func getProfile () {
-        
+    func getUserInfo(with completion: @escaping (_ grapUser: MSGraphUser) ->Void){
+        self.graphClient.me().request().getWithCompletion {
+            (user: MSGraphUser?, error: Error?) in
+            if let graphError = error {
+                print(NSLocalizedString("ERROR", comment: ""), graphError)
+            }
+            else {
+                guard let userInfo = user else {
+                    print("USER_INFO_LOAD_FAILURE")
+                    return
+                }
+                completion(userInfo)
+            }
+        }
     }
     
 }
