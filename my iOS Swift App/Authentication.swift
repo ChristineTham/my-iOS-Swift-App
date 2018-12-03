@@ -13,9 +13,7 @@ struct Authentication {
             return NXOAuth2AuthenticationProvider.sharedAuth()
         }
     }
-}
 
-extension Authentication {
     /**
      Authenticates to Microsoft Graph. 
      If a user has previously signed in before and not disconnected, silent log in

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		31EF65702788FBF2456B2D7D /* libPods-my iOS Swift App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F1B90091FD29ED9108EC03E /* libPods-my iOS Swift App.a */; };
+		87991BA421B4E6D200FB07C1 /* GraphData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87991BA321B4E6D200FB07C1 /* GraphData.swift */; };
 		87D2CEB921B10DAC00E5004F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEB821B10DAC00E5004F /* AppDelegate.swift */; };
 		87D2CEBB21B10DAC00E5004F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEBA21B10DAC00E5004F /* FirstViewController.swift */; };
 		87D2CEBD21B10DAC00E5004F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEBC21B10DAC00E5004F /* SecondViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		21F8BDCFC02CAE24CD2A3FC8 /* Pods-my iOS Swift App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my iOS Swift App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-my iOS Swift App/Pods-my iOS Swift App.debug.xcconfig"; sourceTree = "<group>"; };
 		6F1B90091FD29ED9108EC03E /* libPods-my iOS Swift App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-my iOS Swift App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		87991BA321B4E6D200FB07C1 /* GraphData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphData.swift; sourceTree = "<group>"; };
 		87D2CEB521B10DAC00E5004F /* my iOS Swift App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "my iOS Swift App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87D2CEB821B10DAC00E5004F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87D2CEBA21B10DAC00E5004F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				87D2CEC121B10DAE00E5004F /* Assets.xcassets */,
 				87D2CEC321B10DAE00E5004F /* LaunchScreen.storyboard */,
 				87D2CEC621B10DAE00E5004F /* Info.plist */,
+				87991BA321B4E6D200FB07C1 /* GraphData.swift */,
 			);
 			path = "my iOS Swift App";
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				87D2CED321B10FAA00E5004F /* SendViewController.swift in Sources */,
 				87D2CED121B10FAA00E5004F /* ApplicationConstants.swift in Sources */,
 				87D2CED221B10FAA00E5004F /* Authentication.swift in Sources */,
+				87991BA421B4E6D200FB07C1 /* GraphData.swift in Sources */,
 				87D2CEBB21B10DAC00E5004F /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
