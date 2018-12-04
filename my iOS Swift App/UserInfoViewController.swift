@@ -14,15 +14,13 @@ class UserInfoViewController: UIViewController {
     
     @IBOutlet weak var connectButton: UIBarButtonItem!
     @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var givenNameLabel: UILabel!
     @IBOutlet weak var surnameLabel: UILabel!
-    @IBOutlet weak var principalNameLabel: UILabel!
     @IBOutlet weak var jobTitleLabel: UILabel!
     @IBOutlet weak var officeLocationLabel: UILabel!
     @IBOutlet weak var mobilePhoneLabel: UILabel!
-    @IBOutlet weak var businessPhonesLabel: UILabel!
-    @IBOutlet weak var preferredLanguageLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
     override func viewDidLoad() {
@@ -58,6 +56,16 @@ class UserInfoViewController: UIViewController {
                             print("An error occured")
                         }
                     })
+                    self.graph?.getPhoto(with: { (result) in
+                        switch (result) {
+                        case .Success:
+                            DispatchQueue.main.async(execute: {
+                                self.imageView.image = self.graph?.myImage
+                            })
+                        default:
+                            print("An error occured")
+                        }
+                    })
                 }
             }
             
@@ -77,7 +85,6 @@ class UserInfoViewController: UIViewController {
             self.idLabel.text = user.entityId
             self.givenNameLabel.text = user.givenName
             self.surnameLabel.text = user.surname
-            self.principalNameLabel.text = user.userPrincipalName
             
             var obj = user.dictionaryFromItem()!["jobTitle"]!
             if let jobTitle = obj as? String {
@@ -94,12 +101,7 @@ class UserInfoViewController: UIViewController {
                 self.mobilePhoneLabel.text = mobilePhone
             }
             
-//            if let businessPhones = user.businessPhones {
-//                self.businessPhonesLabel.text = "(not implemented)"
-//            }
-            
             self.emailLabel.text = user.mail
-            self.preferredLanguageLabel.text = user.preferredLanguage
         })
     }    
 }
