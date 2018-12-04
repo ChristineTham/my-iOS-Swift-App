@@ -38,7 +38,7 @@ struct Authentication {
                 .login(with: nil) { (error: Error?) in
                     
                     if let nserror = error {
-                        completion(MSGraphError.nsErrorType(error: nserror as NSError))
+                        completion(MSGraphError.NSErrorType(error: nserror as NSError))
                     }
                     else {
                         completion(nil)
