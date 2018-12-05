@@ -10,7 +10,7 @@ import Foundation
 
 class MSGraphController {
     static let clientId = "e810233c-a57b-4300-8c12-633a14c4dc26"
-    static let scopes   = ["Files.ReadWrite","User.ReadBasic.All", "User.Read", "Mail.Read", "Calendars.Read", "Contacts.Read"]
+    static let scopes   = ["User.Read.All", "Mail.Read", "Calendars.Read", "Contacts.Read", "Directory.AccessAsUser.All", "People.Read", "Group.Read.All"]
     lazy var graphClient: MSGraphClient = {
         
         let client = MSGraphClient.defaultClient()
@@ -36,8 +36,8 @@ class MSGraphController {
         graphClient.me().request().getWithCompletion {
             (user: MSGraphUser?, error: Error?) in
             
-            if let nsError = error {
-                completion(.Failure(error: MSGraphError.NSErrorType(error: nsError as NSError)))
+            if let error = error {
+                completion(.Failure(error: MSGraphError.ErrorType(error: error)))
             }
             else {
                 if let me = user {
@@ -60,8 +60,8 @@ class MSGraphController {
         graphClient.users().request().getWithCompletion {
             (userCollection: MSCollection?, nextRequest: MSGraphUsersCollectionRequest?, error: Error?) in
             
-            if let nsError = error {
-                completion(.Failure(error: MSGraphError.NSErrorType(error: nsError as NSError)))
+            if let error = error {
+                completion(.Failure(error: MSGraphError.ErrorType(error: error)))
             }
             else {
                 var displayString = "List of users:\n"
@@ -88,8 +88,8 @@ class MSGraphController {
         graphClient.me().directReports().request().getWithCompletion {
             (directCollection: MSCollection?, nextRequest: MSGraphUserDirectReportsCollectionWithReferencesRequest?, error: Error?) in
             
-            if let nsError = error {
-                completion(.Failure(error: MSGraphError.NSErrorType(error: nsError as NSError)))
+            if let error = error {
+                completion(.Failure(error: MSGraphError.ErrorType(error: error)))
             }
             else {
                 var displayString = "List of directs: \n"
@@ -119,8 +119,8 @@ class MSGraphController {
         graphClient.me().manager().request().getWithCompletion {
             (directoryObject: MSGraphDirectoryObject?, error: Error?) in
             
-            if let nsError = error {
-                completion(.Failure(error: MSGraphError.NSErrorType(error: nsError as NSError)))
+            if let error = error {
+                completion(.Failure(error: MSGraphError.ErrorType(error: error)))
             }
             else {
                 var displayString: String = "Manager information: \n"
@@ -146,8 +146,8 @@ class MSGraphController {
         graphClient.me().photoValue().download {
             (url: URL?, response: URLResponse?, error: Error?) in
                 
-            if let nsError = error {
-                completion(.Failure(error: MSGraphError.NSErrorType(error: nsError as NSError)))
+            if let error = error {
+                completion(.Failure(error: MSGraphError.ErrorType(error: error)))
                 return
             }
             
@@ -168,8 +168,8 @@ class MSGraphController {
     func getEvents(with completion: @escaping (_ result: Result) -> Void) {
         graphClient.me().events().request().getWithCompletion {
             (eventCollection: MSCollection?, nextRequest: MSGraphUserEventsCollectionRequest?, error: Error?) in
-            if let nsError = error {
-                completion(.Failure(error: MSGraphError.NSErrorType(error: nsError as NSError)))
+            if let error = error {
+                completion(.Failure(error: MSGraphError.ErrorType(error: error)))
             }
             else {
                 var displayString = "List of events (subjects):\n"
@@ -199,8 +199,8 @@ class MSGraphController {
         
         graphClient.me().calendar().events().request().add(event) {
             (event: MSGraphEvent?, error: Error?) in
-            if let nsError = error {
-                completion(.Failure(error: MSGraphError.NSErrorType(error: nsError as NSError)))
+            if let error = error {
+                completion(.Failure(error: MSGraphError.ErrorType(error: error)))
             }
             else {
                 let displayString = "Event created with id \(event!.entityId!)"
@@ -220,8 +220,8 @@ class MSGraphController {
         graphClient.me().events(eventId).request().getWithCompletion {
             (event: MSGraphEvent?, error: Error?) in
             
-            if let nsError = error {
-                completion(.Failure(error: MSGraphError.NSErrorType(error: nsError as NSError)))
+            if let error = error {
+                completion(.Failure(error: MSGraphError.ErrorType(error: error)))
             }
             else {
                 guard let validEvent = event else {
@@ -231,8 +231,8 @@ class MSGraphController {
                 validEvent.subject = "New Name"
                 self.graphClient.me().events(validEvent.entityId).request().update(validEvent, withCompletion: {
                     (updatedEvent: MSGraphEvent?, error: Error?) in
-                    if let nsError = error {
-                        completion(.Failure(error: MSGraphError.NSErrorType(error: nsError as NSError)))
+                    if let error = error {
+                        completion(.Failure(error: MSGraphError.ErrorType(error: error)))
                     }
                     else {
                         let displayString = "Event updated with a new subject"
@@ -252,8 +252,8 @@ class MSGraphController {
         
         graphClient.me().events(eventId).request().delete(completion: {
             (error: Error?) in
-            if let nsError = error {
-                completion(.Failure(error: MSGraphError.NSErrorType(error: nsError as NSError)))
+            if let error = error {
+                completion(.Failure(error: MSGraphError.ErrorType(error: error)))
             }
             else {
                 completion(.Success(displayText: "Deleted calendar event id: \(eventId)"))
@@ -314,8 +314,8 @@ class MSGraphController {
             nextRequest: MSGraphUserMemberOfCollectionWithReferencesRequest?,
             error: Error?) in
             
-            if let nsError = error {
-                completion(.Failure(error: MSGraphError.NSErrorType(error: nsError as NSError)))
+            if let error = error {
+                completion(.Failure(error: MSGraphError.ErrorType(error: error)))
                 return
             }
             
@@ -349,6 +349,6 @@ enum Result {
 }
 
 enum MSGraphError: Error {
-    case NSErrorType(error: NSError)
+    case ErrorType(error: Error)
     case UnexpectecError(errorString: String)
 }

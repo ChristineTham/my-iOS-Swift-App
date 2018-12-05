@@ -40,8 +40,8 @@ class UserInfoViewController: UIViewController {
                 
                 if let graphError = error {
                     switch graphError {
-                    case .NSErrorType(let nsError):
-                        print(NSLocalizedString("ERROR", comment: ""), nsError.localizedDescription)
+                    case .ErrorType(let error):
+                        print(NSLocalizedString("ERROR", comment: ""), error.localizedDescription)
                     default:
                         print("Unexpected error")
                     }
